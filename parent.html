@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>parent window</title>
+    <meta charset="utf-8" />
+    <script src="showModalDialog.js"></script>
+</head>
+<body>
+    <br>
+        <p><input id="button" type="button" value="show modal" onclick="showModal()" /> <span id="result"></span></p>
+
+
+    <hr />
+    
+
+
+    <script>
+      function showModal(){
+            var opt = "dialogWidth:800px; dialogHeight:380px";
+            var ret = window.showModalDialog("child.html","valueFromParent", opt);
+            document.getElementById('result').innerHTML = "<b>" + ret + "</b>";
+    }    
+    </script>
+    
+</body>
+</html>

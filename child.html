@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+      <title>child</title>
+    </head>
+    <body>
+      <h1>child window</h1>
+      <p>Dialog argments: <span id="arg"></span></p>
+      <button id="Returned_Close" onclick="sendValToParent(this.id);">close</button>
+      <button id="Returned_Continue" onclick="sendValToParent(this.id);">continue</button>
+    
+      <script>
+        (function(){
+          document.getElementById('arg').innerHTML = window.dialogArguments;
+        })();
+        function sendValToParent(id){
+        window.returnValue = id;
+        if (navigator.userAgent.indexOf("Chrome") !== -1){
+          parent.document.getElementsByTagName('dialog')[0].close();
+        }else{
+          window.close();
+        }
+     
+      }
+      </script>
+    </body>
+</html>
